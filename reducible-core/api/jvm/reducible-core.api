@@ -1,0 +1,152 @@
+public final class io/github/milanhorvatovic/reducible/CompositionKt {
+	public static final fun combine ([Lio/github/milanhorvatovic/reducible/Reducer;)Lio/github/milanhorvatovic/reducible/Reducer;
+	public static final fun forEachIdentified (Lio/github/milanhorvatovic/reducible/Reducer;Lio/github/milanhorvatovic/reducible/Optional;Lkotlin/jvm/functions/Function1;Lio/github/milanhorvatovic/reducible/Prism;Lkotlin/jvm/functions/Function2;)Lio/github/milanhorvatovic/reducible/Reducer;
+	public static final fun handle (Lio/github/milanhorvatovic/reducible/EffectHandler;Ljava/lang/Object;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static final fun ifPresent (Lio/github/milanhorvatovic/reducible/Reducer;Lio/github/milanhorvatovic/reducible/Optional;Lio/github/milanhorvatovic/reducible/Prism;Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/github/milanhorvatovic/reducible/Reducer;
+	public static synthetic fun ifPresent$default (Lio/github/milanhorvatovic/reducible/Reducer;Lio/github/milanhorvatovic/reducible/Optional;Lio/github/milanhorvatovic/reducible/Prism;Lkotlin/jvm/functions/Function1;Ljava/lang/Object;ILjava/lang/Object;)Lio/github/milanhorvatovic/reducible/Reducer;
+	public static final fun rowReduced (Ljava/lang/Object;Lio/github/milanhorvatovic/reducible/Reduced;Ljava/lang/Object;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lio/github/milanhorvatovic/reducible/Prism;Lkotlin/jvm/functions/Function2;)Lio/github/milanhorvatovic/reducible/Reduced;
+}
+
+public final class io/github/milanhorvatovic/reducible/EffectEnvelope {
+	public fun <init> (Ljava/lang/Object;Lio/github/milanhorvatovic/reducible/EffectScope;Lio/github/milanhorvatovic/reducible/EffectKey;Lio/github/milanhorvatovic/reducible/EffectOwner;)V
+	public synthetic fun <init> (Ljava/lang/Object;Lio/github/milanhorvatovic/reducible/EffectScope;Lio/github/milanhorvatovic/reducible/EffectKey;Lio/github/milanhorvatovic/reducible/EffectOwner;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/Object;
+	public final fun component2 ()Lio/github/milanhorvatovic/reducible/EffectScope;
+	public final fun component3 ()Lio/github/milanhorvatovic/reducible/EffectKey;
+	public final fun component4 ()Lio/github/milanhorvatovic/reducible/EffectOwner;
+	public final fun copy (Ljava/lang/Object;Lio/github/milanhorvatovic/reducible/EffectScope;Lio/github/milanhorvatovic/reducible/EffectKey;Lio/github/milanhorvatovic/reducible/EffectOwner;)Lio/github/milanhorvatovic/reducible/EffectEnvelope;
+	public static synthetic fun copy$default (Lio/github/milanhorvatovic/reducible/EffectEnvelope;Ljava/lang/Object;Lio/github/milanhorvatovic/reducible/EffectScope;Lio/github/milanhorvatovic/reducible/EffectKey;Lio/github/milanhorvatovic/reducible/EffectOwner;ILjava/lang/Object;)Lio/github/milanhorvatovic/reducible/EffectEnvelope;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getEffect ()Ljava/lang/Object;
+	public final fun getKey ()Lio/github/milanhorvatovic/reducible/EffectKey;
+	public final fun getOwner ()Lio/github/milanhorvatovic/reducible/EffectOwner;
+	public final fun getScope ()Lio/github/milanhorvatovic/reducible/EffectScope;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public abstract interface class io/github/milanhorvatovic/reducible/EffectHandler {
+	public abstract fun handle (Ljava/lang/Object;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public abstract interface class io/github/milanhorvatovic/reducible/EffectKey {
+	public fun getPolicy ()Lio/github/milanhorvatovic/reducible/KeyPolicy;
+}
+
+public final class io/github/milanhorvatovic/reducible/EffectKey$DefaultImpls {
+	public static fun getPolicy (Lio/github/milanhorvatovic/reducible/EffectKey;)Lio/github/milanhorvatovic/reducible/KeyPolicy;
+}
+
+public abstract interface class io/github/milanhorvatovic/reducible/EffectOwner {
+	public abstract fun resolvesIn (Ljava/lang/Object;)Z
+}
+
+public final class io/github/milanhorvatovic/reducible/EffectScope : java/lang/Enum {
+	public static final field Free Lio/github/milanhorvatovic/reducible/EffectScope;
+	public static final field StateScoped Lio/github/milanhorvatovic/reducible/EffectScope;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Lio/github/milanhorvatovic/reducible/EffectScope;
+	public static fun values ()[Lio/github/milanhorvatovic/reducible/EffectScope;
+}
+
+public abstract interface class io/github/milanhorvatovic/reducible/Event {
+}
+
+public final class io/github/milanhorvatovic/reducible/IdentifiedAction {
+	public fun <init> (Ljava/lang/Object;Ljava/lang/Object;)V
+	public final fun component1 ()Ljava/lang/Object;
+	public final fun component2 ()Ljava/lang/Object;
+	public final fun copy (Ljava/lang/Object;Ljava/lang/Object;)Lio/github/milanhorvatovic/reducible/IdentifiedAction;
+	public static synthetic fun copy$default (Lio/github/milanhorvatovic/reducible/IdentifiedAction;Ljava/lang/Object;Ljava/lang/Object;ILjava/lang/Object;)Lio/github/milanhorvatovic/reducible/IdentifiedAction;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getAction ()Ljava/lang/Object;
+	public final fun getId ()Ljava/lang/Object;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/milanhorvatovic/reducible/IdentifiedEffectKey : io/github/milanhorvatovic/reducible/EffectKey {
+	public fun <init> (Ljava/lang/Object;Lio/github/milanhorvatovic/reducible/EffectKey;)V
+	public final fun component1 ()Ljava/lang/Object;
+	public final fun component2 ()Lio/github/milanhorvatovic/reducible/EffectKey;
+	public final fun copy (Ljava/lang/Object;Lio/github/milanhorvatovic/reducible/EffectKey;)Lio/github/milanhorvatovic/reducible/IdentifiedEffectKey;
+	public static synthetic fun copy$default (Lio/github/milanhorvatovic/reducible/IdentifiedEffectKey;Ljava/lang/Object;Lio/github/milanhorvatovic/reducible/EffectKey;ILjava/lang/Object;)Lio/github/milanhorvatovic/reducible/IdentifiedEffectKey;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getId ()Ljava/lang/Object;
+	public final fun getKey ()Lio/github/milanhorvatovic/reducible/EffectKey;
+	public fun getPolicy ()Lio/github/milanhorvatovic/reducible/KeyPolicy;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/milanhorvatovic/reducible/KeyPolicy : java/lang/Enum {
+	public static final field CancelPrevious Lio/github/milanhorvatovic/reducible/KeyPolicy;
+	public static final field Ordered Lio/github/milanhorvatovic/reducible/KeyPolicy;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Lio/github/milanhorvatovic/reducible/KeyPolicy;
+	public static fun values ()[Lio/github/milanhorvatovic/reducible/KeyPolicy;
+}
+
+public abstract interface class io/github/milanhorvatovic/reducible/Lens : io/github/milanhorvatovic/reducible/Optional {
+	public abstract fun get (Ljava/lang/Object;)Ljava/lang/Object;
+	public fun getOrNull (Ljava/lang/Object;)Ljava/lang/Object;
+}
+
+public final class io/github/milanhorvatovic/reducible/Lens$DefaultImpls {
+	public static fun getOrNull (Lio/github/milanhorvatovic/reducible/Lens;Ljava/lang/Object;)Ljava/lang/Object;
+}
+
+public final class io/github/milanhorvatovic/reducible/OpticsKt {
+	public static final fun andThen (Lio/github/milanhorvatovic/reducible/Optional;Lio/github/milanhorvatovic/reducible/Optional;)Lio/github/milanhorvatovic/reducible/Optional;
+	public static final fun lens (Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function2;)Lio/github/milanhorvatovic/reducible/Lens;
+	public static final fun optional (Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function2;)Lio/github/milanhorvatovic/reducible/Optional;
+	public static final fun prism (Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Lio/github/milanhorvatovic/reducible/Prism;
+}
+
+public abstract interface class io/github/milanhorvatovic/reducible/Optional {
+	public abstract fun getOrNull (Ljava/lang/Object;)Ljava/lang/Object;
+	public abstract fun set (Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+}
+
+public abstract interface class io/github/milanhorvatovic/reducible/Prism : io/github/milanhorvatovic/reducible/Optional {
+	public abstract fun embed (Ljava/lang/Object;)Ljava/lang/Object;
+	public fun set (Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+}
+
+public final class io/github/milanhorvatovic/reducible/Prism$DefaultImpls {
+	public static fun set (Lio/github/milanhorvatovic/reducible/Prism;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+}
+
+public final class io/github/milanhorvatovic/reducible/Reduced {
+	public fun <init> (Ljava/lang/Object;Ljava/util/List;Ljava/util/List;)V
+	public synthetic fun <init> (Ljava/lang/Object;Ljava/util/List;Ljava/util/List;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/Object;
+	public final fun component2 ()Ljava/util/List;
+	public final fun component3 ()Ljava/util/List;
+	public final fun copy (Ljava/lang/Object;Ljava/util/List;Ljava/util/List;)Lio/github/milanhorvatovic/reducible/Reduced;
+	public static synthetic fun copy$default (Lio/github/milanhorvatovic/reducible/Reduced;Ljava/lang/Object;Ljava/util/List;Ljava/util/List;ILjava/lang/Object;)Lio/github/milanhorvatovic/reducible/Reduced;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getEffects ()Ljava/util/List;
+	public final fun getFollowUps ()Ljava/util/List;
+	public final fun getState ()Ljava/lang/Object;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public abstract interface class io/github/milanhorvatovic/reducible/Reducer {
+	public abstract fun reduce (Ljava/lang/Object;Ljava/lang/Object;)Lio/github/milanhorvatovic/reducible/Reduced;
+}
+
+public final class io/github/milanhorvatovic/reducible/ReducerKt {
+	public static final fun andSend (Lio/github/milanhorvatovic/reducible/Reduced;[Ljava/lang/Object;)Lio/github/milanhorvatovic/reducible/Reduced;
+	public static final fun andSend (Ljava/lang/Object;[Ljava/lang/Object;)Lio/github/milanhorvatovic/reducible/Reduced;
+	public static final fun only (Ljava/lang/Object;)Lio/github/milanhorvatovic/reducible/Reduced;
+	public static final fun withEffect (Ljava/lang/Object;Ljava/lang/Object;Lio/github/milanhorvatovic/reducible/EffectScope;Lio/github/milanhorvatovic/reducible/EffectKey;)Lio/github/milanhorvatovic/reducible/Reduced;
+	public static synthetic fun withEffect$default (Ljava/lang/Object;Ljava/lang/Object;Lio/github/milanhorvatovic/reducible/EffectScope;Lio/github/milanhorvatovic/reducible/EffectKey;ILjava/lang/Object;)Lio/github/milanhorvatovic/reducible/Reduced;
+	public static final fun withEffects (Ljava/lang/Object;[Ljava/lang/Object;)Lio/github/milanhorvatovic/reducible/Reduced;
+}
+
+public final class io/github/milanhorvatovic/reducible/ReplayKt {
+	public static final fun replay (Lio/github/milanhorvatovic/reducible/Reducer;Ljava/lang/Object;Ljava/lang/Iterable;)Ljava/lang/Object;
+}
+
