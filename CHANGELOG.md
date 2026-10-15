@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Added
 
+- JVM target for `reducible-core`, `reducible-runtime`, and `reducible-test`.
 - `reducible-core`: `Reducer` and `Reduced`, effect envelopes with `EffectScope`, `EffectKey`, and `KeyPolicy`, `EffectOwner`, optics (`Lens`, `Prism`, `Optional`, `casePrism`, `andThen`), composition (`combine`, `ifPresent`, `forEachIdentified`, `rowReduced`, `handle`), follow-up actions (`andSend`), `Event`, and `replay`.
 - `reducible-runtime`: `Store` with confined reduction, state-scoped and keyed effect cancellation, follow-up queueing with cycle protection, and one-shot events; `StoreScope` (`Main`, `Background`, `Dedicated`, `Inherited`, `Testing`); `ViewStore` projections; `StoreObserver` with effect events and warnings; `DefectHandler` with rethrowing and logging policies; `ActionRecorder` and `RecordingStore`; `feedInto`; a GCD-backed `Dedicated` scope for iOS.
 - `reducible-immutable`: `forEachIdentified` over `PersistentList` with structural sharing, and `PersistentListSerializer`.

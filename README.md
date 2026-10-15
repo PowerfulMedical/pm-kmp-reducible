@@ -28,7 +28,7 @@ Unidirectional state for Kotlin Multiplatform: pure reducers, effects the runtim
 | `reducible-android` | `StoreViewModel`: a store held by a `ViewModel`, with process-death restore through `SavedStateHandle` | runtime, lifecycle-viewmodel-savedstate, kotlinx-serialization |
 | [`swift/`](swift) | The SwiftUI and Combine bridge (`StoreModel`, `ViewStoreModel`, `ProjectedModel`, `statePublisher`), bundled into the app's own framework | the runtime, through your umbrella framework |
 
-Targets: Android (`minSdk 26`), `iosArm64`, `iosSimulatorArm64`. All modules declare `explicitApi()`, and the public surface is pinned by API dumps under each module's `api/` directory.
+Targets: Android (`minSdk 26`), `iosArm64`, `iosSimulatorArm64`; JVM for `reducible-core`, `reducible-runtime`, and `reducible-test`. All modules declare `explicitApi()`, and the public surface is pinned by API dumps under each module's `api/` directory.
 
 Once published, the coordinates are `io.github.milanhorvatovic:<artifact>:<version>`:
 
