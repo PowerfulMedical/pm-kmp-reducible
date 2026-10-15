@@ -1,0 +1,297 @@
+public final class io/github/milanhorvatovic/reducible/runtime/ActionRecorder : io/github/milanhorvatovic/reducible/runtime/StoreObserver {
+	public fun <init> ()V
+	public fun <init> (I)V
+	public synthetic fun <init> (IILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun clear ()V
+	public final fun getRecording ()Lio/github/milanhorvatovic/reducible/runtime/Recording;
+	public fun onEffect (Lio/github/milanhorvatovic/reducible/runtime/EffectEvent;)V
+	public fun onReduced (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+	public fun onWarning (Lio/github/milanhorvatovic/reducible/runtime/StoreWarning;)V
+}
+
+public final class io/github/milanhorvatovic/reducible/runtime/BridgeKt {
+	public static final fun feedInto (Lkotlinx/coroutines/flow/Flow;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public abstract interface class io/github/milanhorvatovic/reducible/runtime/Defect {
+	public abstract fun getError ()Ljava/lang/Throwable;
+}
+
+public final class io/github/milanhorvatovic/reducible/runtime/Defect$FollowUpCycle : io/github/milanhorvatovic/reducible/runtime/Defect {
+	public fun <init> (Ljava/lang/Object;Ljava/lang/Object;)V
+	public final fun component1 ()Ljava/lang/Object;
+	public final fun component2 ()Ljava/lang/Object;
+	public final fun copy (Ljava/lang/Object;Ljava/lang/Object;)Lio/github/milanhorvatovic/reducible/runtime/Defect$FollowUpCycle;
+	public static synthetic fun copy$default (Lio/github/milanhorvatovic/reducible/runtime/Defect$FollowUpCycle;Ljava/lang/Object;Ljava/lang/Object;ILjava/lang/Object;)Lio/github/milanhorvatovic/reducible/runtime/Defect$FollowUpCycle;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getAction ()Ljava/lang/Object;
+	public fun getError ()Ljava/lang/Throwable;
+	public final fun getState ()Ljava/lang/Object;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/milanhorvatovic/reducible/runtime/Defect$InEffect : io/github/milanhorvatovic/reducible/runtime/Defect {
+	public fun <init> (Ljava/lang/Object;Ljava/lang/Throwable;)V
+	public final fun component1 ()Ljava/lang/Object;
+	public final fun component2 ()Ljava/lang/Throwable;
+	public final fun copy (Ljava/lang/Object;Ljava/lang/Throwable;)Lio/github/milanhorvatovic/reducible/runtime/Defect$InEffect;
+	public static synthetic fun copy$default (Lio/github/milanhorvatovic/reducible/runtime/Defect$InEffect;Ljava/lang/Object;Ljava/lang/Throwable;ILjava/lang/Object;)Lio/github/milanhorvatovic/reducible/runtime/Defect$InEffect;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getEffect ()Ljava/lang/Object;
+	public fun getError ()Ljava/lang/Throwable;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/milanhorvatovic/reducible/runtime/Defect$InReducer : io/github/milanhorvatovic/reducible/runtime/Defect {
+	public fun <init> (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Throwable;)V
+	public final fun component1 ()Ljava/lang/Object;
+	public final fun component2 ()Ljava/lang/Object;
+	public final fun component3 ()Ljava/lang/Throwable;
+	public final fun copy (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Throwable;)Lio/github/milanhorvatovic/reducible/runtime/Defect$InReducer;
+	public static synthetic fun copy$default (Lio/github/milanhorvatovic/reducible/runtime/Defect$InReducer;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Throwable;ILjava/lang/Object;)Lio/github/milanhorvatovic/reducible/runtime/Defect$InReducer;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getAction ()Ljava/lang/Object;
+	public fun getError ()Ljava/lang/Throwable;
+	public final fun getState ()Ljava/lang/Object;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/milanhorvatovic/reducible/runtime/DefectException : java/lang/RuntimeException {
+	public fun <init> (Lio/github/milanhorvatovic/reducible/runtime/Defect;)V
+	public final fun getDefect ()Lio/github/milanhorvatovic/reducible/runtime/Defect;
+}
+
+public abstract interface class io/github/milanhorvatovic/reducible/runtime/DefectHandler {
+	public abstract fun onDefect (Lio/github/milanhorvatovic/reducible/runtime/Defect;)V
+}
+
+public final class io/github/milanhorvatovic/reducible/runtime/EffectEnd : java/lang/Enum {
+	public static final field CancelledByKey Lio/github/milanhorvatovic/reducible/runtime/EffectEnd;
+	public static final field CancelledByOwner Lio/github/milanhorvatovic/reducible/runtime/EffectEnd;
+	public static final field Completed Lio/github/milanhorvatovic/reducible/runtime/EffectEnd;
+	public static final field Defect Lio/github/milanhorvatovic/reducible/runtime/EffectEnd;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Lio/github/milanhorvatovic/reducible/runtime/EffectEnd;
+	public static fun values ()[Lio/github/milanhorvatovic/reducible/runtime/EffectEnd;
+}
+
+public abstract interface class io/github/milanhorvatovic/reducible/runtime/EffectEvent {
+	public abstract fun getEffect ()Ljava/lang/Object;
+	public abstract fun getKey ()Lio/github/milanhorvatovic/reducible/EffectKey;
+}
+
+public final class io/github/milanhorvatovic/reducible/runtime/EffectEvent$Ended : io/github/milanhorvatovic/reducible/runtime/EffectEvent {
+	public fun <init> (Ljava/lang/Object;Lio/github/milanhorvatovic/reducible/EffectKey;Lio/github/milanhorvatovic/reducible/runtime/EffectEnd;)V
+	public final fun component1 ()Ljava/lang/Object;
+	public final fun component2 ()Lio/github/milanhorvatovic/reducible/EffectKey;
+	public final fun component3 ()Lio/github/milanhorvatovic/reducible/runtime/EffectEnd;
+	public final fun copy (Ljava/lang/Object;Lio/github/milanhorvatovic/reducible/EffectKey;Lio/github/milanhorvatovic/reducible/runtime/EffectEnd;)Lio/github/milanhorvatovic/reducible/runtime/EffectEvent$Ended;
+	public static synthetic fun copy$default (Lio/github/milanhorvatovic/reducible/runtime/EffectEvent$Ended;Ljava/lang/Object;Lio/github/milanhorvatovic/reducible/EffectKey;Lio/github/milanhorvatovic/reducible/runtime/EffectEnd;ILjava/lang/Object;)Lio/github/milanhorvatovic/reducible/runtime/EffectEvent$Ended;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getEffect ()Ljava/lang/Object;
+	public final fun getEnd ()Lio/github/milanhorvatovic/reducible/runtime/EffectEnd;
+	public fun getKey ()Lio/github/milanhorvatovic/reducible/EffectKey;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/milanhorvatovic/reducible/runtime/EffectEvent$Launched : io/github/milanhorvatovic/reducible/runtime/EffectEvent {
+	public fun <init> (Ljava/lang/Object;Lio/github/milanhorvatovic/reducible/EffectScope;Lio/github/milanhorvatovic/reducible/EffectKey;Z)V
+	public final fun component1 ()Ljava/lang/Object;
+	public final fun component2 ()Lio/github/milanhorvatovic/reducible/EffectScope;
+	public final fun component3 ()Lio/github/milanhorvatovic/reducible/EffectKey;
+	public final fun component4 ()Z
+	public final fun copy (Ljava/lang/Object;Lio/github/milanhorvatovic/reducible/EffectScope;Lio/github/milanhorvatovic/reducible/EffectKey;Z)Lio/github/milanhorvatovic/reducible/runtime/EffectEvent$Launched;
+	public static synthetic fun copy$default (Lio/github/milanhorvatovic/reducible/runtime/EffectEvent$Launched;Ljava/lang/Object;Lio/github/milanhorvatovic/reducible/EffectScope;Lio/github/milanhorvatovic/reducible/EffectKey;ZILjava/lang/Object;)Lio/github/milanhorvatovic/reducible/runtime/EffectEvent$Launched;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getEffect ()Ljava/lang/Object;
+	public fun getKey ()Lio/github/milanhorvatovic/reducible/EffectKey;
+	public final fun getQueued ()Z
+	public final fun getScope ()Lio/github/milanhorvatovic/reducible/EffectScope;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/milanhorvatovic/reducible/runtime/EffectEvent$Skipped : io/github/milanhorvatovic/reducible/runtime/EffectEvent {
+	public fun <init> (Ljava/lang/Object;Lio/github/milanhorvatovic/reducible/EffectKey;)V
+	public final fun component1 ()Ljava/lang/Object;
+	public final fun component2 ()Lio/github/milanhorvatovic/reducible/EffectKey;
+	public final fun copy (Ljava/lang/Object;Lio/github/milanhorvatovic/reducible/EffectKey;)Lio/github/milanhorvatovic/reducible/runtime/EffectEvent$Skipped;
+	public static synthetic fun copy$default (Lio/github/milanhorvatovic/reducible/runtime/EffectEvent$Skipped;Ljava/lang/Object;Lio/github/milanhorvatovic/reducible/EffectKey;ILjava/lang/Object;)Lio/github/milanhorvatovic/reducible/runtime/EffectEvent$Skipped;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getEffect ()Ljava/lang/Object;
+	public fun getKey ()Lio/github/milanhorvatovic/reducible/EffectKey;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/milanhorvatovic/reducible/runtime/Recording {
+	public fun <init> (Ljava/lang/Object;Ljava/util/List;)V
+	public final fun component1 ()Ljava/lang/Object;
+	public final fun component2 ()Ljava/util/List;
+	public final fun copy (Ljava/lang/Object;Ljava/util/List;)Lio/github/milanhorvatovic/reducible/runtime/Recording;
+	public static synthetic fun copy$default (Lio/github/milanhorvatovic/reducible/runtime/Recording;Ljava/lang/Object;Ljava/util/List;ILjava/lang/Object;)Lio/github/milanhorvatovic/reducible/runtime/Recording;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getActions ()Ljava/util/List;
+	public final fun getInitialState ()Ljava/lang/Object;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/milanhorvatovic/reducible/runtime/RecordingStore {
+	public final fun clearRecording ()V
+	public final fun close ()V
+	public final fun getEvents ()Lkotlinx/coroutines/flow/Flow;
+	public final fun getInitialState ()Ljava/lang/Object;
+	public final fun getRecording ()Lio/github/milanhorvatovic/reducible/runtime/Recording;
+	public final fun getState ()Ljava/lang/Object;
+	public final fun getStateFlow ()Lkotlinx/coroutines/flow/StateFlow;
+	public final fun observe (Lkotlin/jvm/functions/Function1;)Lio/github/milanhorvatovic/reducible/runtime/Subscription;
+	public final fun send (Ljava/lang/Object;)V
+}
+
+public final class io/github/milanhorvatovic/reducible/runtime/RecordingStoreKt {
+	public static final fun RecordingStore (Ljava/lang/Object;Lio/github/milanhorvatovic/reducible/Reducer;Lio/github/milanhorvatovic/reducible/EffectHandler;Lio/github/milanhorvatovic/reducible/runtime/DefectHandler;Lio/github/milanhorvatovic/reducible/runtime/StoreScope;Ljava/lang/Object;)Lio/github/milanhorvatovic/reducible/runtime/RecordingStore;
+	public static synthetic fun RecordingStore$default (Ljava/lang/Object;Lio/github/milanhorvatovic/reducible/Reducer;Lio/github/milanhorvatovic/reducible/EffectHandler;Lio/github/milanhorvatovic/reducible/runtime/DefectHandler;Lio/github/milanhorvatovic/reducible/runtime/StoreScope;Ljava/lang/Object;ILjava/lang/Object;)Lio/github/milanhorvatovic/reducible/runtime/RecordingStore;
+}
+
+public final class io/github/milanhorvatovic/reducible/runtime/Store {
+	public final fun close ()V
+	public final fun getActiveEffects ()I
+	public final fun getEvents ()Lkotlinx/coroutines/flow/Flow;
+	public final fun getState ()Ljava/lang/Object;
+	public final fun getStateFlow ()Lkotlinx/coroutines/flow/StateFlow;
+	public final fun observe (Lkotlin/jvm/functions/Function1;)Lio/github/milanhorvatovic/reducible/runtime/Subscription;
+	public final fun send (Ljava/lang/Object;)V
+}
+
+public final class io/github/milanhorvatovic/reducible/runtime/StoreKt {
+	public static final fun Store (Ljava/lang/Object;Lio/github/milanhorvatovic/reducible/Reducer;Lio/github/milanhorvatovic/reducible/EffectHandler;Lio/github/milanhorvatovic/reducible/runtime/DefectHandler;Lio/github/milanhorvatovic/reducible/runtime/StoreScope;Lio/github/milanhorvatovic/reducible/runtime/StoreObserver;Ljava/lang/Object;)Lio/github/milanhorvatovic/reducible/runtime/Store;
+	public static synthetic fun Store$default (Ljava/lang/Object;Lio/github/milanhorvatovic/reducible/Reducer;Lio/github/milanhorvatovic/reducible/EffectHandler;Lio/github/milanhorvatovic/reducible/runtime/DefectHandler;Lio/github/milanhorvatovic/reducible/runtime/StoreScope;Lio/github/milanhorvatovic/reducible/runtime/StoreObserver;Ljava/lang/Object;ILjava/lang/Object;)Lio/github/milanhorvatovic/reducible/runtime/Store;
+	public static final fun events (Lio/github/milanhorvatovic/reducible/runtime/Store;Lkotlin/jvm/functions/Function1;)Lkotlinx/coroutines/flow/Flow;
+}
+
+public abstract interface class io/github/milanhorvatovic/reducible/runtime/StoreObserver {
+	public fun onEffect (Lio/github/milanhorvatovic/reducible/runtime/EffectEvent;)V
+	public abstract fun onReduced (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+	public fun onWarning (Lio/github/milanhorvatovic/reducible/runtime/StoreWarning;)V
+}
+
+public final class io/github/milanhorvatovic/reducible/runtime/StoreObserver$DefaultImpls {
+	public static fun onEffect (Lio/github/milanhorvatovic/reducible/runtime/StoreObserver;Lio/github/milanhorvatovic/reducible/runtime/EffectEvent;)V
+	public static fun onWarning (Lio/github/milanhorvatovic/reducible/runtime/StoreObserver;Lio/github/milanhorvatovic/reducible/runtime/StoreWarning;)V
+}
+
+public abstract interface class io/github/milanhorvatovic/reducible/runtime/StoreScope {
+}
+
+public final class io/github/milanhorvatovic/reducible/runtime/StoreScope$Background : io/github/milanhorvatovic/reducible/runtime/StoreScope {
+	public static final field INSTANCE Lio/github/milanhorvatovic/reducible/runtime/StoreScope$Background;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/milanhorvatovic/reducible/runtime/StoreScope$Dedicated : io/github/milanhorvatovic/reducible/runtime/StoreScope {
+	public fun <init> (Lkotlinx/coroutines/CoroutineDispatcher;)V
+	public final fun component1 ()Lkotlinx/coroutines/CoroutineDispatcher;
+	public final fun copy (Lkotlinx/coroutines/CoroutineDispatcher;)Lio/github/milanhorvatovic/reducible/runtime/StoreScope$Dedicated;
+	public static synthetic fun copy$default (Lio/github/milanhorvatovic/reducible/runtime/StoreScope$Dedicated;Lkotlinx/coroutines/CoroutineDispatcher;ILjava/lang/Object;)Lio/github/milanhorvatovic/reducible/runtime/StoreScope$Dedicated;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getDispatcher ()Lkotlinx/coroutines/CoroutineDispatcher;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/milanhorvatovic/reducible/runtime/StoreScope$Inherited : io/github/milanhorvatovic/reducible/runtime/StoreScope {
+	public fun <init> (Lkotlinx/coroutines/CoroutineScope;)V
+	public final fun component1 ()Lkotlinx/coroutines/CoroutineScope;
+	public final fun copy (Lkotlinx/coroutines/CoroutineScope;)Lio/github/milanhorvatovic/reducible/runtime/StoreScope$Inherited;
+	public static synthetic fun copy$default (Lio/github/milanhorvatovic/reducible/runtime/StoreScope$Inherited;Lkotlinx/coroutines/CoroutineScope;ILjava/lang/Object;)Lio/github/milanhorvatovic/reducible/runtime/StoreScope$Inherited;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getScope ()Lkotlinx/coroutines/CoroutineScope;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/milanhorvatovic/reducible/runtime/StoreScope$Main : io/github/milanhorvatovic/reducible/runtime/StoreScope {
+	public static final field INSTANCE Lio/github/milanhorvatovic/reducible/runtime/StoreScope$Main;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/milanhorvatovic/reducible/runtime/StoreScope$Testing : io/github/milanhorvatovic/reducible/runtime/StoreScope {
+	public fun <init> (Lkotlinx/coroutines/CoroutineDispatcher;)V
+	public final fun component1 ()Lkotlinx/coroutines/CoroutineDispatcher;
+	public final fun copy (Lkotlinx/coroutines/CoroutineDispatcher;)Lio/github/milanhorvatovic/reducible/runtime/StoreScope$Testing;
+	public static synthetic fun copy$default (Lio/github/milanhorvatovic/reducible/runtime/StoreScope$Testing;Lkotlinx/coroutines/CoroutineDispatcher;ILjava/lang/Object;)Lio/github/milanhorvatovic/reducible/runtime/StoreScope$Testing;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getDispatcher ()Lkotlinx/coroutines/CoroutineDispatcher;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/milanhorvatovic/reducible/runtime/StoreSupportKt {
+	public static final fun loggingDefectHandler (Lkotlin/jvm/functions/Function1;)Lio/github/milanhorvatovic/reducible/runtime/DefectHandler;
+	public static final fun plus (Lio/github/milanhorvatovic/reducible/runtime/StoreObserver;Lio/github/milanhorvatovic/reducible/runtime/StoreObserver;)Lio/github/milanhorvatovic/reducible/runtime/StoreObserver;
+	public static final fun rethrowingDefectHandler ()Lio/github/milanhorvatovic/reducible/runtime/DefectHandler;
+}
+
+public abstract interface class io/github/milanhorvatovic/reducible/runtime/StoreWarning {
+}
+
+public final class io/github/milanhorvatovic/reducible/runtime/StoreWarning$EventDropped : io/github/milanhorvatovic/reducible/runtime/StoreWarning {
+	public fun <init> (Ljava/lang/Object;)V
+	public final fun component1 ()Ljava/lang/Object;
+	public final fun copy (Ljava/lang/Object;)Lio/github/milanhorvatovic/reducible/runtime/StoreWarning$EventDropped;
+	public static synthetic fun copy$default (Lio/github/milanhorvatovic/reducible/runtime/StoreWarning$EventDropped;Ljava/lang/Object;ILjava/lang/Object;)Lio/github/milanhorvatovic/reducible/runtime/StoreWarning$EventDropped;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getEvent ()Ljava/lang/Object;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/milanhorvatovic/reducible/runtime/StoreWarning$SentAfterClose : io/github/milanhorvatovic/reducible/runtime/StoreWarning {
+	public fun <init> (Ljava/lang/Object;)V
+	public final fun component1 ()Ljava/lang/Object;
+	public final fun copy (Ljava/lang/Object;)Lio/github/milanhorvatovic/reducible/runtime/StoreWarning$SentAfterClose;
+	public static synthetic fun copy$default (Lio/github/milanhorvatovic/reducible/runtime/StoreWarning$SentAfterClose;Ljava/lang/Object;ILjava/lang/Object;)Lio/github/milanhorvatovic/reducible/runtime/StoreWarning$SentAfterClose;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getAction ()Ljava/lang/Object;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/milanhorvatovic/reducible/runtime/StoreWarning$SentFromFinishedEffect : io/github/milanhorvatovic/reducible/runtime/StoreWarning {
+	public fun <init> (Ljava/lang/Object;Ljava/lang/Object;)V
+	public final fun component1 ()Ljava/lang/Object;
+	public final fun component2 ()Ljava/lang/Object;
+	public final fun copy (Ljava/lang/Object;Ljava/lang/Object;)Lio/github/milanhorvatovic/reducible/runtime/StoreWarning$SentFromFinishedEffect;
+	public static synthetic fun copy$default (Lio/github/milanhorvatovic/reducible/runtime/StoreWarning$SentFromFinishedEffect;Ljava/lang/Object;Ljava/lang/Object;ILjava/lang/Object;)Lio/github/milanhorvatovic/reducible/runtime/StoreWarning$SentFromFinishedEffect;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getAction ()Ljava/lang/Object;
+	public final fun getEffect ()Ljava/lang/Object;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public abstract interface class io/github/milanhorvatovic/reducible/runtime/Subscription {
+	public abstract fun cancel ()V
+}
+
+public final class io/github/milanhorvatovic/reducible/runtime/ViewStore {
+	public final fun getState ()Ljava/lang/Object;
+	public final fun getStateFlow ()Lkotlinx/coroutines/flow/StateFlow;
+	public final fun observe (Lkotlin/jvm/functions/Function1;)Lio/github/milanhorvatovic/reducible/runtime/Subscription;
+	public final fun send (Ljava/lang/Object;)V
+}
+
+public final class io/github/milanhorvatovic/reducible/runtime/ViewStoreKt {
+	public static final fun view (Lio/github/milanhorvatovic/reducible/runtime/Store;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Lio/github/milanhorvatovic/reducible/runtime/ViewStore;
+	public static final fun view (Lio/github/milanhorvatovic/reducible/runtime/ViewStore;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Lio/github/milanhorvatovic/reducible/runtime/ViewStore;
+}
+
