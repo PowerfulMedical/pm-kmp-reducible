@@ -1,0 +1,43 @@
+public final class io/github/milanhorvatovic/reducible/test/OpticAssertionsKt {
+	public static final fun assertLensLaws (Lio/github/milanhorvatovic/reducible/Lens;Ljava/lang/Object;Ljava/lang/Object;)V
+	public static final fun assertOptionalLaws (Lio/github/milanhorvatovic/reducible/Optional;Ljava/lang/Object;Ljava/lang/Object;[Ljava/lang/Object;)V
+	public static final fun assertPrismLaws (Lio/github/milanhorvatovic/reducible/Prism;Ljava/lang/Object;Ljava/lang/Object;[Ljava/lang/Object;)V
+}
+
+public final class io/github/milanhorvatovic/reducible/test/ReducerAssertionsKt {
+	public static final fun given (Lio/github/milanhorvatovic/reducible/Reducer;Ljava/lang/Object;)Lio/github/milanhorvatovic/reducible/test/ReducerScenario;
+}
+
+public final class io/github/milanhorvatovic/reducible/test/ReducerScenario {
+	public final fun on (Ljava/lang/Object;)Lio/github/milanhorvatovic/reducible/test/ReducerVerdict;
+}
+
+public final class io/github/milanhorvatovic/reducible/test/ReducerVerdict {
+	public final fun andOn (Ljava/lang/Object;)Lio/github/milanhorvatovic/reducible/test/ReducerVerdict;
+	public final fun expect (Ljava/lang/Object;)Lio/github/milanhorvatovic/reducible/test/ReducerVerdict;
+	public final fun expectEffects ([Ljava/lang/Object;)Lio/github/milanhorvatovic/reducible/test/ReducerVerdict;
+	public final fun expectEnvelopes ([Lio/github/milanhorvatovic/reducible/EffectEnvelope;)Lio/github/milanhorvatovic/reducible/test/ReducerVerdict;
+	public final fun expectFollowUps ([Ljava/lang/Object;)Lio/github/milanhorvatovic/reducible/test/ReducerVerdict;
+	public final fun expectNoEffects ()Lio/github/milanhorvatovic/reducible/test/ReducerVerdict;
+	public final fun expectState (Lkotlin/jvm/functions/Function1;)Lio/github/milanhorvatovic/reducible/test/ReducerVerdict;
+}
+
+public final class io/github/milanhorvatovic/reducible/test/TestStore {
+	public final fun close ()V
+	public final fun expectAction (Ljava/lang/Object;)Lio/github/milanhorvatovic/reducible/test/TestStore;
+	public final fun expectAction (Ljava/lang/Object;Ljava/lang/Object;)Lio/github/milanhorvatovic/reducible/test/TestStore;
+	public final fun expectNoMoreActions ()Lio/github/milanhorvatovic/reducible/test/TestStore;
+	public final fun expectState (Ljava/lang/Object;)Lio/github/milanhorvatovic/reducible/test/TestStore;
+	public final fun finish (Z)V
+	public static synthetic fun finish$default (Lio/github/milanhorvatovic/reducible/test/TestStore;ZILjava/lang/Object;)V
+	public final fun getState ()Ljava/lang/Object;
+	public final fun getStateFlow ()Lkotlinx/coroutines/flow/StateFlow;
+	public final fun observe (Lkotlin/jvm/functions/Function1;)Lio/github/milanhorvatovic/reducible/runtime/Subscription;
+	public final fun send (Ljava/lang/Object;)V
+}
+
+public final class io/github/milanhorvatovic/reducible/test/TestStoreKt {
+	public static final fun testStore (Lkotlinx/coroutines/test/TestScope;Ljava/lang/Object;Lio/github/milanhorvatovic/reducible/Reducer;Lio/github/milanhorvatovic/reducible/EffectHandler;Lio/github/milanhorvatovic/reducible/runtime/DefectHandler;)Lio/github/milanhorvatovic/reducible/test/TestStore;
+	public static synthetic fun testStore$default (Lkotlinx/coroutines/test/TestScope;Ljava/lang/Object;Lio/github/milanhorvatovic/reducible/Reducer;Lio/github/milanhorvatovic/reducible/EffectHandler;Lio/github/milanhorvatovic/reducible/runtime/DefectHandler;ILjava/lang/Object;)Lio/github/milanhorvatovic/reducible/test/TestStore;
+}
+

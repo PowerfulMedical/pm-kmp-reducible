@@ -8,9 +8,9 @@ repos:
     rev: v6.0.0
     hooks:
       - id: trailing-whitespace
-        exclude: \.klib\.api$
+        exclude: \.api$
       - id: end-of-file-fixer
-        exclude: \.klib\.api$
+        exclude: \.api$
       - id: check-merge-conflict
       - id: check-symlinks
       - id: check-yaml

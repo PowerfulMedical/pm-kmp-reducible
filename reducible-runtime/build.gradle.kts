@@ -14,6 +14,7 @@ kotlin {
         minSdk = libs.versions.android.minSdk.get().toInt()
         withHostTestBuilder {}
     }
+    jvm()
     iosArm64()
     iosSimulatorArm64()
 
